@@ -18,9 +18,9 @@ func TestAdd(t *testing.T) {
 // 	}
 // }
 
-func TestMultiply(t *testing.T) {
-	result := Multiply(1,2)
-	if result != 2 {
-		t.Errorf("expected %d; got %d", 2, result)
-	}
-}
+// func TestMultiply(t *testing.T) {
+// 	result := Multiply(1,2)
+// 	if result != 2 {
+// 		t.Errorf("expected %d; got %d", 2, result)
+// 	}
+// }
