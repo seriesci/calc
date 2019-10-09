@@ -15,9 +15,8 @@ jobs:
           name: POST SeriesCI
           command: |
             go test ./... -coverprofile cover.out
-            sleep 3
             go tool cover -func cover.out | grep total | awk '{print $3}' | xargs -I {} curl \
               --header "Authorization: Token ${TOKEN}" \
-              --data value="{}" \
+              --data-urlencode value="{}" \
               --data sha="${CIRCLE_SHA1}" \
               https://seriesci.com/api/repos/seriesci/calc/coverage/combined
