@@ -14,6 +14,10 @@ jobs:
       - run:
           name: POST SeriesCI
           command: |
+            echo $CIRCLE_USERNAME
+            echo $CIRCLE_REPOSITORY_URL
+            echo $CIRCLE_PROJECT_USERNAME
+            echo $CIRCLE_PROJECT_REPONAME
             go test ./... -coverprofile cover.out
             go tool cover -func cover.out | grep total | awk '{print $3}' | xargs -I {} curl \
               --header "Authorization: Token ${TOKEN}" \
